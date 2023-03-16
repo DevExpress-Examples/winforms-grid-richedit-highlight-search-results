@@ -1,37 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
-using DevExpress.LookAndFeel;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace E4422 {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
             gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(OnCustomDrawCell);
-            gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(OnCustomColumnDisplayText);
             List<Invoice> invoices = CreateData();
             bindingSource1.DataSource = invoices;
-        }
-
-        private void OnCustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e) {
-            if (e.Column == colDescription && !string.IsNullOrEmpty(gridView1.FindFilterText)) {
-                server.RtfText = e.DisplayText;
-                e.DisplayText = server.Text;
-            }
         }
 
         private static RichEditDocumentServer server = new RichEditDocumentServer();
 
         private void OnCustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e) {
             if (e.Column == colDescription && !string.IsNullOrEmpty(gridView1.FindFilterText)) {
-                server.Text = e.DisplayText;
+                server.RtfText = e.DisplayText;
                 Document document = server.Document;
                 document.BeginUpdate();
                 DocumentRange[] ranges = document.FindAll(gridView1.FindFilterText, SearchOptions.None);

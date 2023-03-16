@@ -1,4 +1,5 @@
-﻿using CustomEditor;
+﻿using DevExpress.XtraEditors.Repository;
+
 namespace E4422 {
     partial class Form1 {
         /// <summary>
@@ -31,7 +32,7 @@ namespace E4422 {
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemRichTextEdit1 = new CustomEditor.RepositoryItemCustomEdit();
+            this.repositoryItemRichTextEdit1 = new RepositoryItemRichTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -118,8 +119,7 @@ namespace E4422 {
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
-        private RepositoryItemCustomEdit repositoryItemCustomEdit1;
-        private RepositoryItemCustomEdit repositoryItemRichTextEdit1;
+        private RepositoryItemRichTextEdit repositoryItemRichTextEdit1;
     }
 }
 

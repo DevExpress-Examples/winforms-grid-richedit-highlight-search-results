@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using DevExpress.XtraRichEdit;
+using System;
 using System.Windows.Forms;
 
 namespace E4422 {
@@ -12,6 +11,7 @@ namespace E4422 {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            RichEditControlCompatibility.UseThemeFonts = false;
             Application.Run(new Form1());
         }
     }
