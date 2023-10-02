@@ -6,7 +6,7 @@
 
 # Winforms Data Grid - Highlight search results in a Rich Text Editor
 
-The WinForms RichEdit does not highlight search results to avoid perofrmace issues. Rich content includes undisplayed markup characters and the WinForms Data Grid includes these characters in the search. This example shows how to handle the [CustomDrawCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawCell) event to highlight the search string within RTF content.
+The WinForms RichEdit does not highlight search results to avoid performance issues. Rich content includes undisplayed markup characters and the WinForms Data Grid includes these characters in the search. This example shows how to handle the [CustomDrawCell](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawCell) event to highlight the search string within RTF content.
 
 
 ## Files to Review
